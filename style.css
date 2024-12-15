@@ -1,0 +1,220 @@
+
+.d-flex {
+    display: flex;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.j-between {
+    justify-content: space-between;
+}
+
+.j-around {
+    justify-content: space-around;
+}
+
+.j-end {
+    justify-content: end;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.a-stretch {
+    align-items: stretch;
+}
+
+.a-end {
+    align-items: flex-end;
+}
+
+.direction-col {
+    flex-direction: column;
+}
+
+.grow1 {
+    flex: 1;
+}
+
+.grow2 {
+    flex: 2;
+}
+
+.grow3 {
+    flex: 3;
+}
+
+.grow4 {
+    flex: 4;
+}
+
+.grow5 {
+    flex: 5;
+}
+
+.grow7 {
+    flex: 7;
+}
+
+
+.gap10 {
+    gap: 10px
+}
+
+.gap20 {
+    gap: 20px
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.p20 {
+    padding: 20px;
+}
+
+.mt3 {
+    margin-top: 30px;
+}
+
+.mt5 {
+    margin-top: 50px;
+}
+
+.mb5 {
+    margin-bottom: 50px;
+}
+
+.mt10 {
+    margin-top: 100px;
+}
+
+.mb10 {
+    margin-bottom: 100px;
+}
+
+.ml1 {
+    margin-left: 10px;
+}
+
+.order1 {
+    order: 1;
+}
+
+.order2 {
+    order: 2;
+}
+
+.order3 {
+    order: 3;
+}
+
+/*INDIVIDUAL CLASSES*/
+.body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://www.marmaladegamestudio.com/wp-content/uploads/2022/06/superstar_inblog_780x430_03.png");
+    background-size: cover;
+}
+.gameGrid {
+    width: 1000px;
+    height: 800px;
+    background-color: rgba(0, 0, 0, 0.39);
+    backdrop-filter: blur(1vb);
+border: 2px white solid;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    position: relative;
+
+}
+
+.grid-item {
+    padding: 5px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.49);
+
+    font-weight: bold;
+}
+
+.player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+}
+
+
+
+.button-container {
+    margin-top: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.player-status-container {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(85, 85, 85, 0.67);
+    backdrop-filter: blur(1vb);
+    padding: 10px;
+    border-top: 2px solid #333;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.player-status-box {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(32, 213, 35, 0.7);
+    border-radius: 5px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: whitesmoke;
+}
+
+.player-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.player-info {
+    font-size: 14px;
+    margin-bottom: 5px;
+}

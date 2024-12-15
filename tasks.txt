@@ -1,0 +1,144 @@
+Task 1: Weather Data Aggregator
+Create a type WeatherReport in TypeScript or an object structure in JavaScript with the following properties:
+
+city (string): The name of the city.
+date (string): The date of the report (format: YYYY-MM-DD).
+temperature (number): Temperature in Celsius.
+conditions (string): Weather conditions (e.g., "sunny", "rainy", "cloudy").
+
+Create an array to store weather reports for multiple cities.
+Implement these functions:
+
+addWeatherReport: Adds a new weather report to the array.
+getAverageTemperature: Calculates the average temperature across all reports for a specific city.
+getReportsByCondition: Returns all reports that match a specific condition (e.g., all "rainy" reports).
+
+Task 2: Cinema Booking System
+Define a type or structure for MovieShow with the following properties:
+
+id (number): Unique identifier for the movie show.
+title (string): Title of the movie.
+availableSeats (number): Number of seats available.
+bookedSeats (number): Number of seats booked.
+
+Create an array of movie shows with at least 5 initial entries.
+
+Implement these functions:
+bookSeats: Books a specified number of seats for a movie show by id. Update the availableSeats and bookedSeats accordingly.
+getAvailableMovies: Returns all movies that have at least one seat available.
+cancelBooking: Cancels a specified number of booked seats for a movie by id and updates the seat counts.
+
+
+Task 3: Shopping Cart System
+Create a type or structure CartItem with these properties:
+
+productId (number): Unique identifier for the product.
+name (string): Name of the product.
+price (number): Price of the product.
+quantity (number): Quantity of the product in the cart.
+
+Create an array to represent a shopping cart.
+Implement the following functions:
+
+addItemToCart: Adds a product to the cart. If the product already exists, update its quantity.
+removeItemFromCart: Removes a product from the cart by productId.
+calculateTotal: Calculates the total price of all items in the cart.
+
+Task 4: Quiz Management System
+Define a type or structure Question with these properties:
+
+id (number): Unique identifier for the question.
+text (string): The question text.
+options (array of strings): The possible answers.
+correctOption (number): The index of the correct option in the options array.
+
+Create an array to store a quiz with at least 5 questions.
+
+Implement the following functions:
+addQuestion: Adds a new question to the quiz.
+attemptQuestion: Takes a question id and an answer index. Returns whether the answer is correct.
+calculateScore: Takes an array of attempts (question IDs and chosen answers) and calculates the total score.
+
+Task 5: Employee Attendance Tracker
+
+Create a type or structure AttendanceRecord with these properties:
+
+employeeId (number): Unique identifier for the employee.
+name (string): Name of the employee.
+datesPresent (array of strings): List of dates (format: YYYY-MM-DD) when the employee was present.
+
+Create an array of attendance records for at least 5 employees.
+
+Implement these functions:
+markAttendance: Marks an employee as present for a given date.
+getAttendance: Returns all dates an employee was present.
+getMostPresentEmployee: Finds the employee with the most dates marked as present.
+
+
+5 ULTRA MEGA TASK:
+
+Task: Smart Home Automation System
+Objective:
+Build a system to manage and automate a smart home setup using TypeScript or JavaScript.
+The system should handle multiple devices, users, and automation rules.
+
+
+Requirements:
+1. Define Types or Object Structures
+Device:
+
+id (number): Unique identifier for the device.
+name (string): Name of the device (e.g., "Living Room Light").
+type (string): Type of device (e.g., "light", "thermostat", "security camera").
+status (string): Current status (e.g., "on", "off", or specific to the device type like "recording" for cameras).
+location (string): Where the device is installed (e.g., "Living Room").
+User:
+
+id (number): Unique identifier for the user.
+name (string): Name of the user.
+permissions (array of strings): List of device IDs the user has access to.
+AutomationRule:
+
+id (number): Unique identifier for the rule.
+name (string): Name of the rule.
+condition (string): The condition to trigger the rule (e.g., "time == 18:00", "motionDetected == true").
+action (function or description): What the rule does (e.g., "turn on all lights in Living Room").
+EventLog:
+
+timestamp (Date): When the event occurred.
+deviceId (number): The ID of the device involved.
+action (string): The action performed (e.g., "turned on", "temperature set to 22°C").
+performedBy (number): The ID of the user or "system" if automated.
+
+2. System Initialization
+Prepopulate arrays with:
+At least 10 devices of different types.
+At least 3 users with varying permissions.
+At least 5 automation rules.
+
+3. Functional Requirements
+Device Management:
+
+addDevice: Adds a new device to the system.
+updateDeviceStatus: Updates the status of a device by its ID.
+getDeviceStatus: Returns the status of a device by its ID.
+listDevicesByLocation: Returns all devices in a specific location.
+User Management:
+
+addUser: Adds a new user to the system.
+assignPermission: Grants a user access to a specific device.
+revokePermission: Removes a user’s access to a specific device.
+getUserDevices: Lists all devices a user has access to.
+Automation Rules:
+
+addAutomationRule: Creates a new automation rule.
+executeRule: Evaluates the condition of a rule and performs the specified action if true.
+listRules: Lists all automation rules currently in the system.
+Event Logging:
+
+logEvent: Adds a new event to the event log when a device status changes.
+getDeviceLogs: Returns all logs for a specific device.
+getUserLogs: Returns all logs for actions performed by a specific user.
+
+
+
