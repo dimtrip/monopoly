@@ -9,7 +9,6 @@ const monopolyBoard = [
     "North Carolina Avenue", "Community Chest", "Pennsylvania Avenue", "Short Line",
     "Chance", "Park Place", "Luxury Tax", "Boardwalk"
 ];
-// Extend property details to include houses
 const propertyDetails = {
     "Mediterranean Avenue": { price: 60, housePrice: 50, houses: 0, owner: null },
     "Baltic Avenue": { price: 60, housePrice: 50, houses: 0, owner: null },
@@ -34,9 +33,7 @@ const propertyDetails = {
     "Park Place": { price: 350, housePrice: 200, houses: 0, owner: null },
     "Boardwalk": { price: 400, housePrice: 200, houses: 0, owner: null }
 };
-// Empty Grid Layout with IDs
 const arr = new Array(100).fill(0);
-// Place streets around the perimeter
 const perimeterIndices = [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
     19, 29, 39, 49, 59, 69, 79, 89,
@@ -46,20 +43,16 @@ const perimeterIndices = [
 perimeterIndices.forEach((index, i) => {
     arr[index] = monopolyBoard[i];
 });
-// Player Details
 const players = [
     { name: "Player 1", money: 2000, position: 0, properties: [], houses: 0 },
     { name: "Player 2", money: 2000, position: 0, properties: [], houses: 0 }
 ];
 let currentPlayer = 0;
-// DOM Elements
 const gameGrid = document.querySelector(".gameGrid");
 const rollDiceButton = document.querySelector("#rollDice");
 if (!gameGrid || !rollDiceButton) {
     throw new Error("Required DOM elements are not available.");
 }
-// Update the board and player statuses
-// Update the board to show houses on properties
 function updateBoard() {
     if (!gameGrid)
         return;
@@ -81,7 +74,6 @@ function updateBoard() {
             </div>
         `;
     });
-    // Update Player 1 Status
     const player1Money = document.getElementById("player1Money");
     const player1Properties = document.getElementById("player1Properties");
     const player1Houses = document.getElementById("player1Houses");
@@ -90,7 +82,6 @@ function updateBoard() {
         player1Properties.innerText = players[0].properties.join(", ") || "None";
         player1Houses.innerText = players[0].houses.toString();
     }
-    // Update Player 2 Status
     const player2Money = document.getElementById("player2Money");
     const player2Properties = document.getElementById("player2Properties");
     const player2Houses = document.getElementById("player2Houses");
@@ -100,20 +91,16 @@ function updateBoard() {
         player2Houses.innerText = players[1].houses.toString();
     }
 }
-// Add a button for buying houses
 const buyHouseButton = document.querySelector("#buyHouse");
 if (buyHouseButton) {
     buyHouseButton.onclick = () => {
         buyHouse();
     };
 }
-// Initial render
 updateBoard();
-// Add a function to handle buying houses
 function buyHouse() {
     const player = players[currentPlayer];
     const currentCell = arr[perimeterIndices[player.position]];
-    // Check if the cell is a property and owned by the current player
     if (typeof currentCell === "string" && propertyDetails[currentCell]) {
         const property = propertyDetails[currentCell];
         if (property.owner !== player.name) {
@@ -126,7 +113,6 @@ function buyHouse() {
             alert(`${currentCell} already has the maximum number of houses.`);
         }
         else {
-            // Deduct money and add a house
             player.money -= property.housePrice;
             property.houses += 1;
             player.houses += 1;
@@ -138,18 +124,15 @@ function buyHouse() {
     }
     updateBoard();
 }
-// Add a function to handle property purchase
 function buyProperty() {
     const player = players[currentPlayer];
     const currentCell = arr[perimeterIndices[player.position]];
-    // Check if the cell is a property
     if (typeof currentCell === "string" && propertyDetails[currentCell]) {
         const property = propertyDetails[currentCell];
         if (property.owner) {
             alert(`This property is already owned by ${property.owner}.`);
         }
         else if (player.money >= property.price) {
-            // Deduct money and assign ownership
             property.owner = player.name;
             player.money -= property.price;
             player.properties.push(currentCell);
@@ -164,14 +147,13 @@ function buyProperty() {
     }
     updateBoard();
 }
-// Modify rollDiceButton to allow property purchase
 rollDiceButton.onclick = () => {
     const roll = Math.ceil(Math.random() * 6);
     const player = players[currentPlayer];
     player.position += roll;
     if (player.position >= perimeterIndices.length) {
         player.position -= perimeterIndices.length;
-        player.money += 200; // Passing "GO"
+        player.money += 200;
     }
     alert(`${player.name} rolled: ${roll}`);
     const currentCell = arr[perimeterIndices[player.position]];
@@ -184,8 +166,7 @@ rollDiceButton.onclick = () => {
             }
         }
     }
-    currentPlayer = 1 - currentPlayer; // Switch players
+    currentPlayer = 1 - currentPlayer;
     updateBoard();
 };
-// Initial render
 updateBoard();
